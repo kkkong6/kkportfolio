@@ -7,8 +7,8 @@
 .about-copy p+p{margin-top:14px}
 .about-copy strong{color:#111;font-weight:500;white-space:nowrap}
 .about-email{display:block;width:max-content;max-width:100%;font:14px/1.6 Arial,sans-serif;margin-top:28px;padding-bottom:4px;border-bottom:1px solid #aaa;overflow-wrap:anywhere}
-#profile:focus-within .real{opacity:1}
-#profile:focus-within .xray{opacity:0}
+#profile:is(:focus-within,.story-active) .real{opacity:1}
+#profile:is(:focus-within,.story-active) .xray{opacity:0}
 @media(min-width:1700px){.about-copy p{font-size:16px}.about-copy h2{font-size:80px}.about-email{font-size:16px}}
 @media(min-width:601px) and (max-height:740px){.about-panel{padding-top:28px;padding-bottom:28px}.about-copy h2{font-size:52px;margin-bottom:16px}.about-copy p{font-size:13px;line-height:1.65}.about-copy p+p{margin-top:10px}.about-email{margin-top:20px}}
 @media(max-width:600px){

@@ -183,12 +183,18 @@ document.querySelectorAll('#objects .artifact,#chapters .exhibit').forEach(owner
 reduced.addEventListener('change',()=>{
  if(reduced.matches)artifactMotions.forEach((state,owner)=>setArtifactMotion(owner,false));
 });
-// Touch has no hover: reveal only while this object is near the viewport centre.
-const touchStory=matchMedia('(hover: none)');
+// Reveal touch/narrow-screen objects on scroll, including the standalone portrait.
+const touchStory=matchMedia('(hover: none), (pointer: coarse), (max-width: 600px)');
+const autoRevealExhibits=[...document.querySelectorAll('#chapters .exhibit')];
 function updateStory(){
- storyExhibits.forEach(exhibit=>{
-  const rect=exhibit.getBoundingClientRect();
-  exhibit.classList.toggle('story-active',touchStory.matches&&Math.abs(rect.left+rect.width/2-gallery.clientWidth/2)<gallery.clientWidth*.3);
+ const galleryRect=gallery.getBoundingClientRect();
+ autoRevealExhibits.forEach(exhibit=>{
+  const rect=exhibit.querySelector('.artifact').getBoundingClientRect();
+  const visibleWidth=Math.max(0,Math.min(rect.right,galleryRect.right)-Math.max(rect.left,galleryRect.left));
+  const nearCentre=Math.abs(rect.left+rect.width/2-(galleryRect.left+gallery.clientWidth/2))<gallery.clientWidth*.3;
+  // Keep the photo real while it is visible beside the About Me copy.
+  const active=exhibit.id==='profile'?visibleWidth>=Math.min(rect.width,gallery.clientWidth)*.4:nearCentre;
+  exhibit.classList.toggle('story-active',touchStory.matches&&active);
   setArtifactMotion(exhibit,exhibit.matches(':hover,:focus-within,.story-active'));
  });
 }

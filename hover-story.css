@@ -65,7 +65,7 @@
 .capability-nav button{display:grid;grid-template-columns:4em max-content;column-gap:20px;line-height:1.6;text-align:left;white-space:nowrap}
 .capability-company{color:#888;font-size:1em}
 .capability-label{display:flex;align-items:baseline;gap:6px;color:#333}
-.nav-arrow{color:#999;font-size:11px;transition:transform .2s ease,color .2s ease}
+.nav-arrow{color:#999;font:400 11px/1 Arial,"Helvetica Neue",sans-serif;font-variant-emoji:text;transition:transform .2s ease,color .2s ease}
 .capability-nav button:hover{text-decoration:none}
 .capability-nav button:hover .capability-company,.capability-nav button:hover .capability-label,.capability-nav button:hover .nav-arrow{color:#080808}
 .capability-nav button:hover .nav-arrow{transform:translate(2px,-2px)}
