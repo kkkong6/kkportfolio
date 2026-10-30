@@ -93,7 +93,6 @@
 
 /* Give the denser Step detail more reading space on desktop. */
 @media(min-width:1001px){#step{--story-width:560px}}
-@media(min-width:1001px) and (min-height:741px){#step-story p{font-size:15px}}
 
 
 
