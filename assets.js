@@ -1,5 +1,6 @@
-// Approved artwork is displayed through CSS viewports, leaving source images intact.
-const sheet = (file, size, rect) => ({ file: new URL(`./assets/${file}`, import.meta.url).href, size, rect });
+// Crop approved artwork after decoding; keep source images intact.
+const opaqueSheets=new Set(['approved-student.png','camera-aligned-v2.png','portrait-xray.png','internship-key-pair.png','passport-pair.png','approved-objects.png','dumbbell-pair.png']);
+const sheet = (file, size, rect) => ({ file: new URL(`./assets/${file}`, import.meta.url).href, size, rect, backdrop:opaqueSheets.has(file) });
 export const art = {
  shiningwood: {
   xray: sheet('shiningwood-stamp-xray.png', [1254,1254], [0,0,1254,1254]),
@@ -39,7 +40,7 @@ export const art = {
 };
 export const portrait = new URL('./assets/portrait-original.jpg', import.meta.url).href;
 export function assetMarkup(asset, state) {
- const [iw,ih]=asset.size, [x,y,w,h]=asset.rect;
+ const [x,y,w,h]=asset.rect;
  const width=w>=h?100:w/h*100, height=h>=w?100:h/w*100;
- return `<span class="asset-layer ${state}"><span class="asset-window" style="width:${width}%;height:${height}%"><img alt="" draggable="false" src="${asset.file}" style="width:${iw/w*100}%;height:${ih/h*100}%;left:${-x/w*100}%;top:${-y/h*100}%"></span></span>`;
+ return `<span class="asset-layer ${state}"><span class="asset-window" style="width:${width}%;height:${height}%"><canvas class="asset-canvas" width="${w}" height="${h}" data-asset-file="${asset.file}" data-asset-size='${JSON.stringify(asset.size)}' data-asset-rect='${JSON.stringify([x,y,w,h])}' data-asset-backdrop="${asset.backdrop}" aria-hidden="true"></canvas></span></span>`;
 }

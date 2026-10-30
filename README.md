@@ -32,12 +32,21 @@ GitHub 仓库已关联 Vercel。将修改提交并推送到 `main` 分支后，V
 
 提交作者需使用关联 GitHub 账号的邮箱，否则 Vercel 会阻止私有仓库的自动部署。当前账号可使用 GitHub 隐私邮箱 `267855816+kkkong6@users.noreply.github.com`。
 
+## 检查
+
+```sh
+npm test
+```
+
+覆盖外围白底透明化、内部白色保留和边缘彩色物体保护。
+
 ## 文件说明
 
 - `index.html`：首页定位和经历导航。
 - `main.js`：物品布局、介绍文案、交互与动效。
 - `data.js`：详细经历与项目资料。
 - `assets.js`、`assets/`：物品图像与裁切配置。
+- `asset-renderer.js`：完整解码后按像素裁切图像，清除与外边缘连通的白底，并缓存裁切结果。
 - `style.css`、`continuous.css`、`approved.css`：基础布局、连续展览和图像展示。
 - `hover-story.css`、`about.css`、`archive.css`：经历详情、About Me 和详细资料样式。
 

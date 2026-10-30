@@ -1,5 +1,6 @@
 import {cases as sourceCases,resumeRows} from './data.js';
 import {art,portrait,assetMarkup} from './assets.js';
+import {renderAssets} from './asset-renderer.js';
 import {createElement,ArrowLeft} from 'lucide';
 import './archive.css';
 import './hover-story.css';
@@ -117,6 +118,7 @@ const stories={
  iqiyi:`<h2>爱奇艺 <span>· 产品经理</span></h2><p>千万级主站用户产品迭代，优化视频内容消费体验。</p><p><strong>播放体验</strong> · 900 万 DAU 播放页核心改版，结合用户行为优化观看体验，人均播放 VV +10%。</p><p><strong>短视频与互动</strong> · 探索短视频产品新形态，重构内容消费链路；设计综艺互动玩法，提升用户参与。</p>`
 };
 $('#about-info').innerHTML=`<div class="about-copy">${stories.profile}<a class="about-email" href="mailto:kk.lingnankong@gmail.com">kk.lingnankong@gmail.com</a></div>`;
+renderAssets();
 const storyExhibits=Object.entries(stories).filter(([id])=>id!=='profile').map(([id,content])=>{
  const exhibit=document.getElementById(id);
  exhibit.classList.add('has-story');
@@ -272,6 +274,7 @@ function show(id,trigger){
  const reading=c.presentation==='reading';
  const body=id==='resume'?resumeRows.map(([date,org,role,key])=>`<div class="timeline-row"><span>${date}</span><button data-case="${key}">${org} ↗<small>${role}</small></button></div>`).join(''):c.sections.map((s,i)=>reading?`<section class="archive-reading"><h3>${s.title}</h3><p>${s.text}</p></section>`:`<details class="archive-section"><summary><span class="section-index">${String(i+1).padStart(2,'0')}</span><span>${s.title}</span><span class="section-toggle" aria-hidden="true">+</span></summary><p>${s.text}</p></details>`).join('');
  $('#detail-content').innerHTML=`<div class="archive-layout${reading?' reading-archive':''}"><figure class="archive-visual"><div class="archive-art" aria-hidden="true">${objectMarkup(item)}</div>${reading?'':`<figcaption><span>${item.year}</span><span>${item.label}</span></figcaption>`}</figure><div class="archive-copy"><p class="tag">${c.tag}</p><h2 id="archive-title">${c.title}</h2><p class="archive-role">${c.subtitle}</p>${c.lead?`<p class="archive-lead">${c.lead}</p>`:''}${metrics.length?`<div class="metrics">${metrics.map(([v,l])=>`<div><strong>${v}</strong><small>${l}</small></div>`).join('')}</div>`:''}<div class="archive-sections">${body}</div>${c.note?`<p class="archive-note">${c.note}</p>`:''}${c.related?.length?`<nav class="related" aria-label="相关经历">${c.related.map(key=>`<button data-case="${key}">${cases[key].subtitle} ↗</button>`).join('')}</nav>`:''}</div></div>`;
+ renderAssets($('#detail-content'));
  const visual=$('.archive-art .artifact');
  visual.removeAttribute('data-case');visual.removeAttribute('aria-label');visual.disabled=true;visual.tabIndex=-1;
  document.body.classList.add('archive-open');

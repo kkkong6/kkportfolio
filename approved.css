@@ -4,7 +4,7 @@
 .bag{isolation:isolate}
 .bag #objects{z-index:1;isolation:isolate}
 .bag>img{position:absolute;inset:0;z-index:2;mix-blend-mode:multiply;pointer-events:none}
-.approved-art{mix-blend-mode:multiply;isolation:auto}
+.approved-art{mix-blend-mode:normal;isolation:auto}
 .approved-art .object-art{mix-blend-mode:normal}
 .asset-layer{position:absolute;inset:0;background:none;transition:opacity .22s ease}
 .asset-layer.xray{opacity:1}.asset-layer.real{opacity:0}
@@ -18,7 +18,7 @@
 .artifact[data-case="profile"] .xray{filter:saturate(.9) brightness(1.04);opacity:.92}
 .artifact:hover .xray,.artifact:focus-visible .xray{opacity:0}
 .asset-window{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);overflow:hidden}
-.asset-window img{position:absolute;max-width:none;pointer-events:none;user-select:none}
+.asset-canvas{position:absolute;inset:0;display:block;width:100%;height:100%;pointer-events:none;user-select:none}
 .artifact[data-case="tools"] .xray .asset-window{clip-path:polygon(15% 0,100% 0,100% 100%,0 100%,0 55%,15% 55%)}
 .portrait-frame{position:absolute;inset:5% 10% 6%;background:#f5f2fa;transform:rotate(-3.5deg);padding:7% 6% 18%;box-shadow:0 1px 3px #3332}
 .portrait-crop{position:relative;display:block;width:100%;height:100%;overflow:hidden}
