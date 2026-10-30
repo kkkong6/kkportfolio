@@ -20,7 +20,15 @@ npm run build
 npm run preview
 ```
 
-构建结果位于 `dist/`。资源使用相对路径，可部署到静态托管服务或 GitHub Pages 的项目路径。上传源码到 GitHub 不会自动发布网站。
+构建结果位于 `dist/`，资源使用相对路径。
+
+## 自动部署
+
+线上地址：https://kkprofile.vercel.app
+
+GitHub 仓库已关联 Vercel。将修改提交并推送到 `main` 分支后，Vercel 会自动构建并更新线上网站。仅在本地修改不会影响线上内容。
+
+部署使用 Vite，构建命令为 `npm run build`，输出目录为 `dist/`。
 
 ## 文件说明
 
