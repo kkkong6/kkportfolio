@@ -1,0 +1,22 @@
+/* Keep the portrait in the same continuous object row; the introduction follows it. */
+.about-panel{flex:0 0 clamp(460px,56vw,740px);min-width:0;display:flex;align-items:center;padding:40px 40px 40px 0;overflow:visible}
+.about-copy{width:100%;min-width:0}
+.about-copy h2{font:400 64px/1.05 Didot,'Times New Roman',serif;margin:0 0 22px}
+.about-copy h2 span{font:15px/1.5 Arial,'PingFang SC',sans-serif;color:#777;margin-left:8px}
+.about-copy p{font:14px/1.75 Arial,'PingFang SC',sans-serif;margin:0;color:#444;text-wrap:pretty}
+.about-copy p+p{margin-top:14px}
+.about-copy strong{color:#111;font-weight:500;white-space:nowrap}
+.about-email{display:block;width:max-content;max-width:100%;font:14px/1.6 Arial,sans-serif;margin-top:28px;padding-bottom:4px;border-bottom:1px solid #aaa;overflow-wrap:anywhere}
+#profile:focus-within .real{opacity:1}
+#profile:focus-within .xray{opacity:0}
+@media(min-width:1700px){.about-copy p{font-size:16px}.about-copy h2{font-size:80px}.about-email{font-size:16px}}
+@media(min-width:601px) and (max-height:740px){.about-panel{padding-top:28px;padding-bottom:28px}.about-copy h2{font-size:52px;margin-bottom:16px}.about-copy p{font-size:13px;line-height:1.65}.about-copy p+p{margin-top:10px}.about-email{margin-top:20px}}
+@media(max-width:600px){
+ .about-panel{flex-basis:100%;padding:24px 20px}
+ .about-copy h2{font-size:42px;margin-bottom:18px}
+ .about-copy h2 span{font-size:12px;margin-left:6px}
+ .about-copy p{font-size:12px;line-height:1.6}
+ .about-copy p+p{margin-top:12px}
+ .about-email{margin-top:22px;font-size:12px}
+}
+@media(max-width:600px) and (max-height:720px){.about-panel{padding:20px}.about-copy h2{font-size:36px}.about-copy p{line-height:1.5}.about-copy p+p{margin-top:10px}}
