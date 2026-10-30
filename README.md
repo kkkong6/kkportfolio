@@ -30,6 +30,8 @@ GitHub 仓库已关联 Vercel。将修改提交并推送到 `main` 分支后，V
 
 部署使用 Vite，构建命令为 `npm run build`，输出目录为 `dist/`。
 
+提交作者需使用关联 GitHub 账号的邮箱，否则 Vercel 会阻止私有仓库的自动部署。当前账号可使用 GitHub 隐私邮箱 `267855816+kkkong6@users.noreply.github.com`。
+
 ## 文件说明
 
 - `index.html`：首页定位和经历导航。
