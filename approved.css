@@ -1,4 +1,4 @@
-/* Keep the approved sheets intact and crop only their on-page presentation. */
+/* Display pre-cropped artwork with the original composition and proportions. */
 .bag{width:63.36%;right:1.5%}
 /* The transparent shell and zipper sit above every packed object, including hover. */
 .bag{isolation:isolate}
@@ -18,7 +18,10 @@
 .artifact[data-case="profile"] .xray{filter:saturate(.9) brightness(1.04);opacity:.92}
 .artifact:hover .xray,.artifact:focus-visible .xray{opacity:0}
 .asset-window{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);overflow:hidden}
-.asset-canvas{position:absolute;inset:0;display:block;width:100%;height:100%;pointer-events:none;user-select:none}
+.asset-window .asset-image{position:absolute;inset:0;display:block;width:100%;height:100%;pointer-events:none;user-select:none}
+.sprite-crop{clip-path:inset(2%)}
+.artifact:not(.real-ready) .real{opacity:0!important}
+.artifact:not(.real-ready) .xray{opacity:.9!important}
 .artifact[data-case="tools"] .xray .asset-window{clip-path:polygon(15% 0,100% 0,100% 100%,0 100%,0 55%,15% 55%)}
 .portrait-frame{position:absolute;inset:5% 10% 6%;background:#f5f2fa;transform:rotate(-3.5deg);padding:7% 6% 18%;box-shadow:0 1px 3px #3332}
 .portrait-crop{position:relative;display:block;width:100%;height:100%;overflow:hidden}

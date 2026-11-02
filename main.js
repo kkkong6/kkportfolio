@@ -1,6 +1,6 @@
 import {cases as sourceCases,resumeRows} from './data.js';
-import {art,portrait,assetMarkup} from './assets.js';
-import {renderAssets} from './asset-renderer.js';
+import {art,portraitMarkup,assetMarkup} from './assets.js';
+import {renderAssets} from './artwork-loader.js';
 import {createElement,ArrowLeft} from 'lucide';
 import './archive.css';
 import './hover-story.css';
@@ -100,7 +100,7 @@ const items=[
 function objectMarkup(item,bag=false){
  const {id,label,year,artOnly=false,sprite=0,x,y,w,r}=item;
  const style=`--sx:${sprite%3*50}%;--sy:${Math.floor(sprite/3)*50}%;--rotation:${bag?r:0}deg;${bag?`left:${x}%;top:${y}%;width:${w}%;`:''}`;
- let images=art[id]?assetMarkup(art[id].xray,'xray')+ (id==='profile'?`<span class="asset-layer real"><span class="portrait-frame"><span class="portrait-crop"><img src="${portrait}" alt="" draggable="false"></span></span></span>`:assetMarkup(art[id].real,'real')):'<span class="sprite xray"></span><span class="sprite real"></span>';
+  let images=art[id]?assetMarkup(art[id].xray,'xray',bag)+ (id==='profile'?portraitMarkup(bag):assetMarkup(art[id].real,'real',bag)):'';
  return `<button class="artifact ${bag?'in-bag':''} ${art[id]?'approved-art':''}" data-case="${id}" aria-label="${label}" style="${style}"><span class="object-art">${images}</span><span class="selection" aria-hidden="true"><i class="guide vertical one"></i><i class="guide vertical two"></i><i class="guide horizontal one"></i><i class="guide horizontal two"></i></span>${artOnly?'':`<span class="object-label" aria-hidden="true">${year?`<span class="label-row"><span class="label-year" data-year="${year}">${year}</span></span>`:''}<span class="label-row"><span class="label-title">${label}</span></span></span>`}</button>`;
 }
 $('#objects').innerHTML=items.map(i=>objectMarkup(i,true)).join('');

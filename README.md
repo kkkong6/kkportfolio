@@ -22,6 +22,18 @@ npm run preview
 
 构建结果位于 `dist/`，资源使用相对路径。
 
+## 图片优化
+
+页面使用 `assets/optimized/` 中预先裁切、去白底并压缩的 WebP 图片。首屏优先加载 X-ray 图，真实材质在首屏图片解码后预加载；后续展览接近可视区域时加载。
+
+修改原始素材或 `artwork-source.js` 中的裁切范围后，运行：
+
+```sh
+npm run optimize:assets
+```
+
+将生成的 WebP 和 `artwork-manifest.js` 一并保存。320 / 940 尺寸由浏览器根据展示宽度与屏幕像素密度选择，旅行包另提供 640 / 1254 尺寸。原始素材保留用于重新生成，访客浏览时无需进行 Canvas 裁切或逐像素去白底。
+
 ## GitHub Pages 部署
 
 启用并成功部署后的地址：https://kkkong6.github.io/kkportfolio/
