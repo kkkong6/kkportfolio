@@ -88,10 +88,10 @@ window.addEventListener('pagehide',finishNameReveal);
 
 const items=[
  {id:'education',label:'数字媒体技术 / 本科',year:'2014 — 2018',x:24,y:60,w:22,r:-8},
- {id:'internships',label:'小米 / 网易 · 产品实习',year:'2017',x:66,y:52,w:12,r:-18},
+ {id:'internships',label:'小米 / 网易 · 产品经理实习',year:'2017',x:66,y:52,w:12,r:-18},
  {id:'iqiyi',label:'爱奇艺 / 用户产品',year:'2018 — 2020',sprite:1,x:76,y:42,w:19,r:6},
  {id:'didi',label:'滴滴 / AI 与安全',year:'2020 — 2023',sprite:2,x:42,y:73,w:21,r:80},
- {id:'sydney',label:'悉尼大学 / 学习与研究',year:'2024 — 2026',x:26,y:39,w:19,r:-5},
+ {id:'sydney',label:'悉尼大学 / 硕士',year:'2024 — 2026',x:26,y:39,w:19,r:-5},
  {id:'shiningwood',label:'Shiningwood / AI 创业',year:'2025',x:36.5,y:44.5,w:10.5,r:-8},
  {id:'baidu',label:'百度 / 多模态产品',year:'2025 — 2026',x:51,y:34,w:24,r:0},
  {id:'step',label:'阶跃星辰 / 基模能力',year:'2026 — NOW',sprite:0,x:68,y:69,w:23,r:4},
@@ -114,7 +114,7 @@ const stories={
  step:`<h2>阶跃星辰 <span>· AI 产品经理实习</span></h2><p>以评测与训练数据驱动基模视觉能力提升，拓展新产品形态与模型生态。</p><p><strong>产品规划</strong> · 跟踪前沿技术趋势，规划模型审美能力演进与产品能力建设。</p><p class="evaluation-line"><strong>审美评测</strong> · 构建模型生成审美 Benchmark 与评测体系，量化布局、交互与视觉质量。</p><p><strong>数据与训练</strong> · 制定数据策略，设计测试 Prompt 与评测数据集，以 Skills 引导高质量产物生成，验证模型改进效果。</p><p><strong>快速开发与产品化</strong> · 运用 AI Coding 快速验证想法，将单次任务抽象为可复用的流程、工具与产品能力。</p>`,
 
  education:`<h2>计算机数字媒体技术 <span>学士 · 哈尔滨师范大学</span></h2><p><strong>专业学习</strong> · 程序设计、算法设计、概率与统计、计算机图形学、视觉与交互。</p><p><strong>技术基础</strong> · 理解程序逻辑、数据与技术约束，兼顾产品可行性与用户体验。</p>`,
- internships:`<h2>小米／网易 <span>· 产品实习</span></h2><p>从用户洞察到产品落地，兼顾业务增长与产品体验。</p><p><strong>小米电商</strong> · 用户与数据分析，优化交易转化，促进 GMV 增长。</p><p><strong>网易新闻</strong> · 新产品从 0 到 1 孵化，完整功能规划、PRD 与交互原型，一个月完成上线。</p>`,
+ internships:`<h2>小米／网易 <span>· 产品经理实习</span></h2><p>从用户洞察到产品落地，兼顾业务增长与产品体验。</p><p><strong>小米电商</strong> · 用户与数据分析，优化交易转化，促进 GMV 增长。</p><p><strong>网易新闻</strong> · 新产品从 0 到 1 孵化，完整功能规划、PRD 与交互原型，一个月完成上线。</p>`,
  iqiyi:`<h2>爱奇艺 <span>· 产品经理</span></h2><p>千万级主站用户产品迭代，优化视频内容消费体验。</p><p><strong>播放体验</strong> · 900 万 DAU 播放页核心改版，结合用户行为优化观看体验，人均播放 VV +10%。</p><p><strong>短视频与互动</strong> · 探索短视频产品新形态，重构内容消费链路；设计综艺互动玩法，提升用户参与。</p>`
 };
 $('#about-info').innerHTML=`<div class="about-copy">${stories.profile}<a class="about-email" href="mailto:kk.lingnankong@gmail.com">kk.lingnankong@gmail.com</a></div>`;
