@@ -22,15 +22,29 @@ npm run preview
 
 构建结果位于 `dist/`，资源使用相对路径。
 
-## 自动部署
+## GitHub Pages 部署
+
+启用并成功部署后的地址：https://kkkong6.github.io/kkportfolio/
+
+首次配置：
+
+1. 将 `.github/workflows/deploy-pages.yml` 提交并推送到 GitHub。
+2. 在仓库的 **Settings → Pages → Build and deployment** 中，将 **Source** 设置为 **GitHub Actions**。
+3. 在 **Actions → Deploy GitHub Pages → Run workflow** 中选择 `main`，运行部署。
+
+之后每次推送到 `main` 都会自动构建并更新 GitHub Pages，也可以在 Actions 页面手动运行。工作流将 Vite 构建生成的 `dist/` 发布到 Pages；相对资源路径兼容 `/kkportfolio/` 子路径。
+
+## Vercel 手动部署
 
 线上地址：https://kkprofile.vercel.app
 
-GitHub 仓库已关联 Vercel。将修改提交并推送到 `main` 分支后，Vercel 会自动构建并更新线上网站。仅在本地修改不会影响线上内容。
+已断开 Vercel 的 GitHub 自动部署连接。推送到 GitHub 不会更新 Vercel 网站。只有明确确认「发布上线」后，才执行 Vercel 手动部署：
+
+```sh
+npx vercel deploy --prod --project kkprofile
+```
 
 部署使用 Vite，构建命令为 `npm run build`，输出目录为 `dist/`。
-
-提交作者需使用关联 GitHub 账号的邮箱，否则 Vercel 会阻止私有仓库的自动部署。当前账号可使用 GitHub 隐私邮箱 `267855816+kkkong6@users.noreply.github.com`。
 
 ## 检查
 
