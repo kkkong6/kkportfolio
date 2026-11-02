@@ -88,7 +88,7 @@ window.addEventListener('pagehide',finishNameReveal);
 
 const items=[
  {id:'education',label:'数字媒体技术 / 本科',year:'2014 — 2018',x:24,y:60,w:22,r:-8},
- {id:'internships',label:'小米 / 网易 · 产品经理实习',year:'2017',x:66,y:52,w:12,r:-18},
+ {id:'internships',label:'小米 / 网易 · 电商与内容产品',year:'2017',x:66,y:52,w:12,r:-18},
  {id:'iqiyi',label:'爱奇艺 / 用户产品',year:'2018 — 2020',sprite:1,x:76,y:42,w:19,r:6},
  {id:'didi',label:'滴滴 / AI 与安全',year:'2020 — 2023',sprite:2,x:42,y:73,w:21,r:80},
  {id:'sydney',label:'悉尼大学 / 硕士',year:'2024 — 2026',x:26,y:39,w:19,r:-5},
